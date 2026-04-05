@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import PulseWadeHorizontal from '../assets/images/Pulse wade  HORIZONTAL.png';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { VortexBackground } from './VortexBackground';
 import { useLanguage } from '../context/LanguageContext';
@@ -27,6 +29,13 @@ const HERO_EVENTS = [
     image: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?q=80&w=2070&auto=format&fit=crop',
     title: 'COASTAL GROOVES',
     date: 'NOV 22'
+  },
+  {
+    id: 5,
+    image: PulseWadeHorizontal,
+    title: 'NEW TALENT: PULSE WADE',
+    date: 'NOW',
+    isPulseWade: true
   }
 ];
 
@@ -94,9 +103,15 @@ export const Hero = () => {
               <p className="text-cyan font-bold uppercase tracking-widest text-sm md:text-lg mb-2 drop-shadow-md">
                 {HERO_EVENTS[currentIndex].date}
               </p>
-              <h2 className="text-4xl md:text-7xl font-display font-black uppercase tracking-tighter text-white drop-shadow-lg">
-                {HERO_EVENTS[currentIndex].title}
-              </h2>
+              {HERO_EVENTS[currentIndex].isPulseWade ? (
+                <Link to="/talent" className="text-4xl md:text-7xl font-display font-black uppercase tracking-tighter text-magenta drop-shadow-lg hover:underline">
+                  {HERO_EVENTS[currentIndex].title}
+                </Link>
+              ) : (
+                <h2 className="text-4xl md:text-7xl font-display font-black uppercase tracking-tighter text-white drop-shadow-lg">
+                  {HERO_EVENTS[currentIndex].title}
+                </h2>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

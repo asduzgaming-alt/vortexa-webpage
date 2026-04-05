@@ -7,9 +7,9 @@ interface PreloaderProps {
 
 export const Preloader = ({ onComplete }: PreloaderProps) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [showEnter, setShowEnter] = useState(false);
 
-  const handleEnter = () => {
+  // Automatically complete after the loading bar animation
+  const handleComplete = () => {
     setIsLoading(false);
     if (onComplete) {
       onComplete();
@@ -50,31 +50,20 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              onAnimationComplete={() => setShowEnter(true)}
+              onAnimationComplete={handleComplete}
               className="h-full bg-cyan shadow-[0_0_10px_rgba(44,203,233,0.8)]"
             />
           </div>
           
           <div className="mt-8 h-12 flex items-center justify-center">
-            {showEnter ? (
-              <motion.button
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                onClick={handleEnter}
-                className="px-8 py-3 bg-magenta text-white font-bold uppercase tracking-widest text-sm rounded-full hover:bg-pink transition-colors shadow-[0_0_20px_rgba(214,73,230,0.5)]"
-              >
-                Enter Vortexa
-              </motion.button>
-            ) : (
-              <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="text-cyan font-sans text-xs uppercase tracking-widest"
-              >
-                Initializing System...
-              </motion.p>
-            )}
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-cyan font-sans text-xs uppercase tracking-widest"
+            >
+              Initializing System...
+            </motion.p>
           </div>
         </motion.div>
       )}

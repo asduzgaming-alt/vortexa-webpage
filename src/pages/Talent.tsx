@@ -1,4 +1,7 @@
 import { useState, useRef } from 'react';
+import PulseWade1 from '../assets/images/Pulse wade 1.png';
+import PulseWade2 from '../assets/images/Pulse wade 2.jpeg';
+import PulseWade3 from '../assets/images/Pulse wade 3.png';
 import { motion, AnimatePresence } from 'motion/react';
 import { VortexBackground } from '../components/VortexBackground';
 import { Instagram, Music, X, Play, Pause, MessageCircle } from 'lucide-react';
@@ -119,15 +122,15 @@ const TALENT_LIST = [
   { 
     id: 6, 
     type: 'dj',
-    name: 'PULSE WAVE', 
+    name: 'PULSE WADE', 
     genre: 'House', 
     nationality: 'Peruvian',
     flag: '🇵🇪',
     images: [
-      'https://images.unsplash.com/photo-1559223607-a43c990c692c?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1516280440502-62b8110b64d0?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2076&auto=format&fit=crop'
-    ], 
+      PulseWade1,
+      PulseWade2,
+      PulseWade3
+    ],
     audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
     socials: { 
       instagram: 'https://instagram.com/pulsewave_pe', 
