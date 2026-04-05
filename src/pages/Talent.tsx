@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import PulseWade1 from '../assets/images/Pulse wade 1.png';
 import PulseWade2 from '../assets/images/Pulse wade 2.jpeg';
 import PulseWade3 from '../assets/images/Pulse wade 3.png';
+import PulseWadeAudio from '../assets/mp3/pulsewade-fragment.mp3';
 import { motion, AnimatePresence } from 'motion/react';
 import { VortexBackground } from '../components/VortexBackground';
 import { Instagram, Music, X, Play, Pause, MessageCircle } from 'lucide-react';
@@ -131,11 +132,11 @@ const TALENT_LIST = [
       PulseWade2,
       PulseWade3
     ],
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
+    audioSrc: PulseWadeAudio,
     socials: { 
-      instagram: 'https://instagram.com/pulsewave_pe', 
-      soundcloud: 'https://soundcloud.com/pulsewave', 
-      tiktok: 'https://tiktok.com/@pulsewave' 
+      instagram: 'https://www.instagram.com/pulsewade.dj?igsh=eGt4dTE1dHd4NDBl&utm_source=qr', 
+      soundcloud: 'https://on.soundcloud.com/3KeTl6JhFE4GELtrdF', 
+      tiktok: 'https://www.tiktok.com/@pulsewade.dj?_r=1&_t=ZS-95HJN800xG8' 
     }
   },
   { 
