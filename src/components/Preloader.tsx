@@ -1,3 +1,4 @@
+import VortexaLogo from '../assets/images/Vortexa ISOTIPO.png';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -38,7 +39,7 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
             className="relative"
           >
             <img 
-              src="https://storage.googleapis.com/aistudio-janus-prod-appspot-com/user_data/asduzgaming%40gmail.com/1741909680-image.png" 
+              src={VortexaLogo} 
               alt="VORTEXA" 
               className="w-64 md:w-96 drop-shadow-[0_0_30px_rgba(214,73,230,0.8)]"
             />

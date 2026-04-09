@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import VortexaLogo from '../assets/images/Vortexa ISOTIPO.png';
 import { Link } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -29,7 +30,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img 
-            src="https://storage.googleapis.com/aistudio-janus-prod-appspot-com/user_data/asduzgaming%40gmail.com/1741909680-image-1.png" 
+            src={VortexaLogo} 
             alt="VORTEXA" 
             className="h-10 md:h-12 object-contain"
           />

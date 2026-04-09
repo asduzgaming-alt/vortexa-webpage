@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PulseWadeHorizontal from '../assets/images/Pulse wade  HORIZONTAL.png';
+import VortexaLogo from '../assets/images/Vortexa ISOTIPO.png';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { VortexBackground } from './VortexBackground';
@@ -52,6 +53,7 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-obsidian">
+
       {/* Full-bleed Background Carousel */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="popLayout">
@@ -74,22 +76,14 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/70 via-obsidian/40 to-obsidian" />
       </div>
 
+
       {/* 3D Vortex Overlay */}
       <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
         <VortexBackground />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 mt-16 w-full max-w-5xl mx-auto">
-        <motion.img
-          src="https://storage.googleapis.com/aistudio-janus-prod-appspot-com/user_data/asduzgaming%40gmail.com/1741909680-image.png"
-          alt="VORTEXA"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-          className="w-56 md:w-[28rem] mb-8 drop-shadow-[0_0_25px_rgba(255,0,127,0.3)]"
-        />
-
+      <div className="relative z-20 flex flex-col items-center text-center px-6 mt-16 w-full max-w-5xl mx-auto">
         {/* Event Info linked to the background */}
         <div className="h-32 md:h-40 flex flex-col justify-center mb-8">
           <AnimatePresence mode="wait">

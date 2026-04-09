@@ -1,4 +1,5 @@
 import { Instagram, Twitter, Youtube, Music } from 'lucide-react';
+import VortexaLogo from '../assets/images/Vortexa ISOTIPO.png';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Footer = () => {
@@ -14,7 +15,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row justify-between items-center">
         <div className="mb-8 md:mb-0 text-center md:text-left flex flex-col items-center md:items-start">
           <img 
-            src="https://storage.googleapis.com/aistudio-janus-prod-appspot-com/user_data/asduzgaming%40gmail.com/1741909680-image.png" 
+            src={VortexaLogo} 
             alt="VORTEXA" 
             className="h-12 md:h-16 mb-4 object-contain"
           />

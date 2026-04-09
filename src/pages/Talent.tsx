@@ -3,6 +3,8 @@ import PulseWade1 from '../assets/images/Pulse wade 1.png';
 import PulseWade2 from '../assets/images/Pulse wade 2.jpeg';
 import PulseWade3 from '../assets/images/Pulse wade 3.png';
 import PulseWadeAudio from '../assets/mp3/pulsewade-fragment.mp3';
+import Gonzalo1 from '../assets/images/Gonzalo1.jpeg';
+import Gonzalo2 from '../assets/images/Gonzalo2.jpg';
 import { motion, AnimatePresence } from 'motion/react';
 import { VortexBackground } from '../components/VortexBackground';
 import { Instagram, Music, X, Play, Pause, MessageCircle } from 'lucide-react';
@@ -25,120 +27,112 @@ const TikTokIcon = ({ size = 20 }: { size?: number }) => (
 );
 
 const TALENT_LIST = [
-  { 
-    id: 1, 
+  // 1. Gonzalo Madariaga
+  {
+    id: 1,
     type: 'dj',
-    name: 'AMELIE LENS', 
-    genre: 'Techno', 
+    name: 'GONZALO MADARIAGA',
+    genre: 'Techno',
+    nationality: 'Chilean',
+    flag: '🇨🇱',
+    images: [Gonzalo1, Gonzalo2],
+    audioSrc: '',
+    socials: { instagram: '', soundcloud: '', tiktok: '' }
+  },
+  // 2. Pulse Wade
+  {
+    id: 2,
+    type: 'dj',
+    name: 'PULSE WADE',
+    genre: 'House',
+    nationality: 'Peruvian',
+    flag: '🇵🇪',
+    images: [PulseWade1, PulseWade2, PulseWade3],
+    audioSrc: PulseWadeAudio,
+    socials: {
+      instagram: 'https://www.instagram.com/pulsewade.dj?igsh=eGt4dTE1dHd4NDBl&utm_source=qr',
+      soundcloud: 'https://on.soundcloud.com/3KeTl6JhFE4GELtrdF',
+      tiktok: 'https://www.tiktok.com/@pulsewade.dj?_r=1&_t=ZS-95HJN800xG8'
+    }
+  },
+  // 3-6. Placeholders (using previous DJ data as placeholders)
+  {
+    id: 3,
+    type: 'dj',
+    name: 'AMELIE LENS',
+    genre: 'Techno',
     nationality: 'Belgian',
     flag: '🇧🇪',
     images: [
       'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop'
-    ], 
+    ],
     audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-    socials: { 
-      instagram: 'https://instagram.com/amelielens', 
-      soundcloud: 'https://soundcloud.com/amelielens', 
-      tiktok: 'https://tiktok.com/@amelielens' 
+    socials: {
+      instagram: 'https://instagram.com/amelielens',
+      soundcloud: 'https://soundcloud.com/amelielens',
+      tiktok: 'https://tiktok.com/@amelielens'
     }
   },
-  { 
-    id: 2, 
+  {
+    id: 4,
     type: 'dj',
-    name: 'KAVINSKY', 
-    genre: 'Synthwave', 
+    name: 'KAVINSKY',
+    genre: 'Synthwave',
     nationality: 'French',
     flag: '🇫🇷',
     images: [
       'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1550029402-226115b7c579?q=80&w=2070&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=2070&auto=format&fit=crop'
-    ], 
+    ],
     audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
-    socials: { 
-      instagram: 'https://instagram.com/kavinsky', 
-      soundcloud: 'https://soundcloud.com/kavinsky', 
-      tiktok: 'https://tiktok.com/@kavinsky' 
+    socials: {
+      instagram: 'https://instagram.com/kavinsky',
+      soundcloud: 'https://soundcloud.com/kavinsky',
+      tiktok: 'https://tiktok.com/@kavinsky'
     }
   },
-  { 
-    id: 3, 
+  {
+    id: 5,
     type: 'dj',
-    name: 'I HATE MODELS', 
-    genre: 'Industrial Techno', 
+    name: 'I HATE MODELS',
+    genre: 'Industrial Techno',
     nationality: 'French',
     flag: '🇫🇷',
     images: [
       'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2076&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop'
-    ], 
+    ],
     audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
-    socials: { 
-      instagram: 'https://instagram.com/ihatemodels', 
-      soundcloud: 'https://soundcloud.com/ihatemodels', 
-      tiktok: 'https://tiktok.com/@ihatemodels' 
+    socials: {
+      instagram: 'https://instagram.com/ihatemodels',
+      soundcloud: 'https://soundcloud.com/ihatemodels',
+      tiktok: 'https://tiktok.com/@ihatemodels'
     }
   },
-  { 
-    id: 4, 
+  {
+    id: 6,
     type: 'dj',
-    name: 'CHARLOTTE DE WITTE', 
-    genre: 'Acid Techno', 
+    name: 'CHARLOTTE DE WITTE',
+    genre: 'Acid Techno',
     nationality: 'Belgian',
     flag: '🇧🇪',
     images: [
       'https://images.unsplash.com/photo-1520483601560-389dff434fdf?q=80&w=1974&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=2070&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=2069&auto=format&fit=crop'
-    ], 
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3',
-    socials: { 
-      instagram: 'https://instagram.com/charlottedewittemusic', 
-      soundcloud: 'https://soundcloud.com/charlottedewitte', 
-      tiktok: 'https://tiktok.com/@charlottedewitte' 
-    }
-  },
-  { 
-    id: 5, 
-    type: 'dj',
-    name: 'PEGGY GOU', 
-    genre: 'House', 
-    nationality: 'South Korean',
-    flag: '🇰🇷',
-    images: [
-      'https://images.unsplash.com/photo-1516280440502-62b8110b64d0?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1974&auto=format&fit=crop'
-    ], 
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3',
-    socials: { 
-      instagram: 'https://instagram.com/peggygou_', 
-      soundcloud: 'https://soundcloud.com/peggygou', 
-      tiktok: 'https://tiktok.com/@peggygou' 
-    }
-  },
-  { 
-    id: 6, 
-    type: 'dj',
-    name: 'PULSE WADE', 
-    genre: 'House', 
-    nationality: 'Peruvian',
-    flag: '🇵🇪',
-    images: [
-      PulseWade1,
-      PulseWade2,
-      PulseWade3
     ],
-    audioSrc: PulseWadeAudio,
-    socials: { 
-      instagram: 'https://www.instagram.com/pulsewade.dj?igsh=eGt4dTE1dHd4NDBl&utm_source=qr', 
-      soundcloud: 'https://on.soundcloud.com/3KeTl6JhFE4GELtrdF', 
-      tiktok: 'https://www.tiktok.com/@pulsewade.dj?_r=1&_t=ZS-95HJN800xG8' 
+    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3',
+    socials: {
+      instagram: 'https://instagram.com/charlottedewittemusic',
+      soundcloud: 'https://soundcloud.com/charlottedewitte',
+      tiktok: 'https://tiktok.com/@charlottedewitte'
     }
-  },
+  }
+];
   { 
     id: 7, 
     type: 'influencer',
