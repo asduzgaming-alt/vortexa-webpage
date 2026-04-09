@@ -6,37 +6,29 @@ import { motion, AnimatePresence } from 'motion/react';
 import { VortexBackground } from './VortexBackground';
 import { useLanguage } from '../context/LanguageContext';
 
+import Gonzalo1 from '../assets/images/Gonzalo1.jpeg';
+
 const HERO_EVENTS = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop',
-    title: 'VORTEX: ORIGIN',
-    date: 'OCT 28'
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop', // Placeholder for SISIFUZ
+    title: 'SISIFUZ',
+    date: 'OFICIAL',
+    isEvent: true
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop',
-    title: 'NEON NIGHTS',
-    date: 'NOV 15'
+    image: PulseWadeHorizontal,
+    title: 'PULSE WADE',
+    date: 'TALENTO',
+    isPulseWade: true
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2076&auto=format&fit=crop',
-    title: 'INDUSTRIAL DECAY',
-    date: 'DEC 02'
-  },
-  {
-    id: 4,
-    image: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?q=80&w=2070&auto=format&fit=crop',
-    title: 'COASTAL GROOVES',
-    date: 'NOV 22'
-  },
-  {
-    id: 5,
-    image: PulseWadeHorizontal,
-    title: 'NEW TALENT: PULSE WADE',
-    date: 'NOW',
-    isPulseWade: true
+    image: Gonzalo1,
+    title: 'GONZALO MADARIAGA',
+    date: 'TALENTO',
+    isGonzalo: true
   }
 ];
 
