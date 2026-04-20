@@ -40,8 +40,7 @@ const TALENT_LIST = [
       audioSrc: '',
       socials: {
         instagram: 'https://www.instagram.com/daniellapinto.02/',
-        soundcloud: '',
-        tiktok: ''
+        tiktok: 'https://www.tiktok.com/@daniellapinto07'
       }
     },
   // 1. Gonzalo Madariaga
