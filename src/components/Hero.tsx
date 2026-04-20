@@ -1,3 +1,4 @@
+import Daniela1 from '../assets/images/Daniela 1.png';
 import { useState, useEffect } from 'react';
 import PulseWadeHorizontal from '../assets/images/Pulse wade  HORIZONTAL.png';
 import VortexaLogo from '../assets/images/Vortexa ISOTIPO.png';
@@ -29,6 +30,13 @@ const HERO_EVENTS = [
     title: 'GONZALO MADARIAGA',
     date: 'TALENTO',
     isGonzalo: true
+  },
+  {
+    id: 4,
+    image: Daniela1,
+    title: 'DANIELLA PINTO',
+    date: 'TALENTO',
+    isDaniella: true
   }
 ];
 

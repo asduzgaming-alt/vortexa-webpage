@@ -28,14 +28,14 @@ const TikTokIcon = ({ size = 20 }: { size?: number }) => (
 );
 
 const TALENT_LIST = [
-    // Influencer: Daniela Pinto
+    // Influencer: Daniella Pinto
     {
       id: 100,
       type: 'influencer',
-      name: 'DANIELA PINTO',
+      name: 'DANIELLA PINTO',
       genre: 'Lifestyle',
-      nationality: 'Chilean',
-      flag: '🇨🇱',
+      nationality: 'Peruvian',
+      flag: '🇵🇪',
       images: [Daniela1],
       audioSrc: '',
       socials: {
