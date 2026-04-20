@@ -40,25 +40,25 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <Link
             to="/"
-            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors text-glitch-hover"
+            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors"
           >
             {t('nav.home')}
           </Link>
           <Link
             to="/talent"
-            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors text-glitch-hover"
+            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors"
           >
             {t('nav.talent')}
           </Link>
           <Link
             to="/shop"
-            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors text-glitch-hover"
+            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors"
           >
             {t('nav.shop')}
           </Link>
           <a
             href="/#lineup"
-            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors text-glitch-hover"
+            className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-magenta transition-colors"
           >
             {t('nav.events')}
           </a>
@@ -69,7 +69,7 @@ export const Navbar = () => {
             <Globe size={16} />
             <span>{language.toUpperCase()}</span>
           </button>
-          <button className="px-6 py-2 bg-magenta/20 border border-magenta text-magenta text-sm font-bold uppercase tracking-wider box-glitch-hover animate-heartbeat">
+          <button className="px-6 py-2 bg-magenta/20 border border-magenta text-magenta text-sm font-bold uppercase tracking-wider">
             {t('nav.currentEvents')}
           </button>
         </div>
@@ -122,7 +122,7 @@ export const Navbar = () => {
           >
             {t('nav.events')}
           </a>
-          <button className="w-full px-6 py-3 bg-magenta/20 border border-magenta text-magenta text-sm font-bold uppercase tracking-wider box-glitch-hover">
+          <button className="w-full px-6 py-3 bg-magenta/20 border border-magenta text-magenta text-sm font-bold uppercase tracking-wider">
             {t('nav.currentEvents')}
           </button>
         </div>
