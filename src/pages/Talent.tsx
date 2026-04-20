@@ -1,3 +1,4 @@
+import Daniela1 from '../assets/images/Daniela 1.png';
 import { useState, useRef } from 'react';
 import PulseWade1 from '../assets/images/Pulse wade 1.png';
 import PulseWade2 from '../assets/images/Pulse wade 2.jpeg';
@@ -27,6 +28,22 @@ const TikTokIcon = ({ size = 20 }: { size?: number }) => (
 );
 
 const TALENT_LIST = [
+    // Influencer: Daniela Pinto
+    {
+      id: 100,
+      type: 'influencer',
+      name: 'DANIELA PINTO',
+      genre: 'Lifestyle',
+      nationality: 'Chilean',
+      flag: '🇨🇱',
+      images: [Daniela1],
+      audioSrc: '',
+      socials: {
+        instagram: 'https://www.instagram.com/daniellapinto.02/',
+        soundcloud: '',
+        tiktok: ''
+      }
+    },
   // 1. Gonzalo Madariaga
   {
     id: 1,
