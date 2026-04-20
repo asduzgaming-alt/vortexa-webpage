@@ -133,64 +133,6 @@ const TALENT_LIST = [
     }
   }
 ];
-  { 
-    id: 7, 
-    type: 'influencer',
-    name: 'NEON QUEEN', 
-    genre: 'Cyberpunk Fashion', 
-    nationality: 'Japanese',
-    flag: '🇯🇵',
-    images: [
-      'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=1974&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2070&auto=format&fit=crop'
-    ], 
-    audioSrc: '',
-    socials: { 
-      instagram: 'https://instagram.com/neonqueen', 
-      soundcloud: '', 
-      tiktok: 'https://tiktok.com/@neonqueen' 
-    }
-  },
-  { 
-    id: 8, 
-    type: 'influencer',
-    name: 'RAVE EXPLORER', 
-    genre: 'Festival Vlogger', 
-    nationality: 'British',
-    flag: '🇬🇧',
-    images: [
-      'https://images.unsplash.com/photo-1525926477800-7a3afafbeaf3?q=80&w=2069&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1533174000255-16134b28c8e6?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop'
-    ], 
-    audioSrc: '',
-    socials: { 
-      instagram: 'https://instagram.com/raveexplorer', 
-      soundcloud: '', 
-      tiktok: 'https://tiktok.com/@raveexplorer' 
-    }
-  },
-  { 
-    id: 9, 
-    type: 'influencer',
-    name: 'TECH WEAR GURU', 
-    genre: 'Techwear Style', 
-    nationality: 'German',
-    flag: '🇩🇪',
-    images: [
-      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1920&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=2070&auto=format&fit=crop'
-    ], 
-    audioSrc: '',
-    socials: { 
-      instagram: 'https://instagram.com/techwearguru', 
-      soundcloud: '', 
-      tiktok: 'https://tiktok.com/@techwearguru' 
-    }
-  }
-];
 
 const AudioVisualizer = ({ isPlaying }: { isPlaying: boolean }) => {
   const bars = Array.from({ length: 24 });
