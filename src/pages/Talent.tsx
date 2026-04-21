@@ -381,18 +381,25 @@ export const Talent = () => {
                 )}
 
                 <div className="flex flex-wrap gap-4">
-                  <a href={selectedTalent.socials.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors font-bold uppercase tracking-widest text-xs">
-                    <Instagram size={16} />
-                    <span>Instagram</span>
-                  </a>
-                  <a href={selectedTalent.socials.soundcloud} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors font-bold uppercase tracking-widest text-xs">
-                    <Music size={16} />
-                    <span>SoundCloud</span>
-                  </a>
-                  <a href={selectedTalent.socials.tiktok} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors font-bold uppercase tracking-widest text-xs">
-                    <TikTokIcon size={16} />
-                    <span>TikTok</span>
-                  </a>
+                  {selectedTalent.socials.instagram && (
+                    <a href={selectedTalent.socials.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors font-bold uppercase tracking-widest text-xs">
+                      <Instagram size={16} />
+                      <span>Instagram</span>
+                    </a>
+                  )}
+                  {selectedTalent.socials.tiktok && (
+                    <a href={selectedTalent.socials.tiktok} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors font-bold uppercase tracking-widest text-xs">
+                      <TikTokIcon size={16} />
+                      <span>TikTok</span>
+                    </a>
+                  )}
+                  {/* Only show SoundCloud for talents that have it (not Daniella) */}
+                  {selectedTalent.socials.soundcloud && selectedTalent.socials.soundcloud !== '' && (
+                    <a href={selectedTalent.socials.soundcloud} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors font-bold uppercase tracking-widest text-xs">
+                      <Music size={16} />
+                      <span>SoundCloud</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
