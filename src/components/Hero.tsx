@@ -8,14 +8,17 @@ import { VortexBackground } from './VortexBackground';
 import { useLanguage } from '../context/LanguageContext';
 
 import Gonzalo1 from '../assets/images/Gonzalo1.jpeg';
+import SisifuzImg from '../assets/images/Sisifuz Place Holder.png';
 
 const HERO_EVENTS = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop', // Placeholder for SISIFUZ
+    image: SisifuzImg,
     title: 'SISIFUZ',
-    date: 'OFICIAL',
-    isEvent: true
+    date: 'MIÉRCOLES DE SISIFUZ',
+    genre: 'Hartechno',
+    isSisifuz: true,
+    instagram: 'https://www.instagram.com/sisifuz/'
   },
   {
     id: 2,
@@ -65,11 +68,21 @@ export const Hero = () => {
             transition={{ duration: 1.2, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <img
-              src={HERO_EVENTS[currentIndex].image}
-              alt={HERO_EVENTS[currentIndex].title}
-              className="w-full h-full object-cover"
-            />
+            {HERO_EVENTS[currentIndex].isSisifuz ? (
+              <a href={HERO_EVENTS[currentIndex].instagram} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={HERO_EVENTS[currentIndex].image}
+                  alt={HERO_EVENTS[currentIndex].title}
+                  className="w-full h-full object-cover cursor-pointer"
+                />
+              </a>
+            ) : (
+              <img
+                src={HERO_EVENTS[currentIndex].image}
+                alt={HERO_EVENTS[currentIndex].title}
+                className="w-full h-full object-cover"
+              />
+            )}
           </motion.div>
         </AnimatePresence>
         {/* Gradient overlay to ensure text readability and blend with the dark theme */}
@@ -96,6 +109,9 @@ export const Hero = () => {
             >
               <p className="text-cyan font-bold uppercase tracking-widest text-sm md:text-lg mb-2 drop-shadow-md">
                 {HERO_EVENTS[currentIndex].date}
+                {HERO_EVENTS[currentIndex].genre && (
+                  <span className="ml-2 text-magenta font-bold">{HERO_EVENTS[currentIndex].genre}</span>
+                )}
               </p>
               {HERO_EVENTS[currentIndex].isPulseWade ? (
                 <Link to="/talent" className="text-4xl md:text-7xl font-display font-black uppercase tracking-tighter text-magenta drop-shadow-lg hover:underline">
