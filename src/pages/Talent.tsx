@@ -1,3 +1,18 @@
+import SisifuzImg from '../assets/images/Sisifuz Place Holder.png';
+  // Evento: SISIFUZ
+  {
+    id: 200,
+    type: 'event',
+    name: 'SISIFUZ',
+    genre: 'Techno',
+    nationality: 'Peruano',
+    flag: '🇵🇪',
+    images: [SisifuzImg],
+    audioSrc: '',
+    socials: {
+      instagram: 'https://www.instagram.com/sisifuz/'
+    }
+  },
 import Daniela1 from '../assets/images/Daniela 1.png';
 import { useState, useRef } from 'react';
 import PulseWade1 from '../assets/images/Pulse wade 1.png';
