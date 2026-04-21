@@ -192,7 +192,7 @@ const AudioVisualizer = ({ isPlaying }: { isPlaying: boolean }) => {
 
 export const Talent = () => {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'dj' | 'influencer'>('dj');
+  const [activeTab, setActiveTab] = useState<'dj' | 'influencer' | 'event'>('dj');
   const [selectedTalent, setSelectedTalent] = useState<typeof TALENT_LIST[0] | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -255,6 +255,16 @@ export const Talent = () => {
             }`}
           >
             Influencers
+          </button>
+          <button 
+            onClick={() => setActiveTab('event')}
+            className={`px-8 py-3 rounded-full uppercase tracking-widest font-bold text-sm transition-all duration-300 ${
+              activeTab === 'event' 
+                ? 'bg-green-500 text-white shadow-[0_0_20px_rgba(44,233,133,0.5)]' 
+                : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white'
+            }`}
+          >
+            Próximos Raves
           </button>
         </div>
 
