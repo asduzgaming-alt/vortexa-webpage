@@ -26,27 +26,7 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[10000] bg-obsidian flex flex-col items-center justify-center"
         >
-          <motion.div
-            animate={{ 
-              opacity: [1, 0.5, 1, 0.2, 1],
-              x: [0, -5, 5, -2, 2, 0]
-            }}
-            transition={{ 
-              duration: 0.5, 
-              repeat: Infinity,
-              repeatType: "mirror" 
-            }}
-            className="relative"
-          >
-            <img 
-              src={VortexaLogo} 
-              alt="VORTEXA" 
-              className="w-64 md:w-96 drop-shadow-[0_0_30px_rgba(214,73,230,0.8)]"
-            />
-            <div className="absolute inset-0 bg-magenta mix-blend-overlay opacity-50 animate-pulse" />
-          </motion.div>
-          
-          <div className="mt-12 w-48 h-1 bg-white/10 rounded-full overflow-hidden">
+          <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden">
             <motion.div 
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
@@ -55,9 +35,8 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
               className="h-full bg-cyan shadow-[0_0_10px_rgba(44,203,233,0.8)]"
             />
           </div>
-          
           <div className="mt-8 h-12 flex items-center justify-center">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}

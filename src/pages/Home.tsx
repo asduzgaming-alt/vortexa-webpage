@@ -4,7 +4,7 @@ import { VibeSlider } from '../components/VibeSlider';
 import { EventGrid } from '../components/EventGrid';
 
 export const Home = () => {
-  const [activeVibeIndex, setActiveVibeIndex] = useState(1);
+  const [activeVibeIndex, setActiveVibeIndex] = useState(0);
 
   return (
     <>

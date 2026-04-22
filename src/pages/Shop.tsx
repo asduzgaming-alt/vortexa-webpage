@@ -13,6 +13,7 @@ export const Shop = () => {
         <VortexBackground />
       </div>
 
+      {/* Original shop content (restored) */}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +28,7 @@ export const Shop = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative">
           {/* Product Image Gallery */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -57,7 +58,6 @@ export const Shop = () => {
               />
             </div>
           </motion.div>
-
           {/* Product Info */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
@@ -112,6 +112,12 @@ export const Shop = () => {
               </a>
             </div>
           </motion.div>
+
+          {/* Blurred overlay with Coming Soon, only over shop content */}
+          <div className="absolute inset-0 z-50 flex flex-col items-center justify-center backdrop-blur-xl bg-black/40 pointer-events-auto select-none">
+            <span className="text-5xl md:text-7xl font-display font-black uppercase tracking-widest text-white/90 drop-shadow-lg mb-4">Coming Soon</span>
+            <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-white/60">Tienda en construcción</span>
+          </div>
         </div>
       </div>
     </div>

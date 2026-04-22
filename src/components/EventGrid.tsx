@@ -1,100 +1,48 @@
+
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Calendar, Clock } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SisifuzImg from '../assets/images/Sisifuz Place Holder.png';
 
 const EVENTS = [
-  // Vibe 0: Techno
-import SisifuzImg from '../assets/images/Sisifuz Place Holder.png';
+  // Vibe 0: House (Coming Soon only)
   {
-    id: 1001,
+    id: 2001,
     vibe: 0,
-    title: 'SISIFUZ',
-    dj: 'HARTECHNO',
-    date: 'MIÉRCOLES',
+    title: 'COMING SOON',
+    dj: '',
+    date: '',
     time: '',
     location: '',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=2080&auto=format&fit=crop',
+    status: 'Coming Soon',
+    comingSoon: true
+  },
+  // Vibe 1: Techno (SISIFUZ only)
+  {
+    id: 1001,
+    vibe: 1,
+    title: 'SISIFUZ',
+    dj: 'HARD TECHNO',
+    date: '22 ABR',
+    time: '10:00 - 04:00',
+    location: 'Miraflores',
     image: SisifuzImg,
     status: 'Available',
     instagram: 'https://www.instagram.com/sisifuz/'
   },
+  // Vibe 2: Minimal (Coming Soon only)
   {
-    id: 1,
-    vibe: 0,
-    title: 'VORTEX: ORIGIN',
-    dj: 'AMELIE LENS',
-    date: 'OCT 28',
-    time: '22:00 - 06:00',
-    location: 'Main Arena',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop',
-    status: 'Selling Fast',
-  },
-  {
-    id: 3,
-    vibe: 0,
-    title: 'INDUSTRIAL DECAY',
-    dj: 'I HATE MODELS',
-    date: 'DEC 02',
-    time: '23:00 - 08:00',
-    location: 'Underground Warehouse',
-    image: 'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2076&auto=format&fit=crop',
-    status: 'Sold Out',
-  },
-  {
-    id: 4,
-    vibe: 0,
-    title: 'ACID RAIN',
-    dj: 'CHARLOTTE DE WITTE',
-    date: 'JAN 15',
-    time: '22:00 - 05:00',
-    location: 'Industrial Factory',
-    image: 'https://images.unsplash.com/photo-1520483601560-389dff434fdf?q=80&w=1974&auto=format&fit=crop',
-    status: 'Available',
-  },
-  // Vibe 1: Synthwave
-  {
-    id: 2,
-    vibe: 1,
-    title: 'NEON NIGHTS',
-    dj: 'KAVINSKY',
-    date: 'NOV 15',
-    time: '20:00 - 04:00',
-    location: 'Skyline Rooftop',
-    image: 'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop',
-    status: 'Available',
-  },
-  {
-    id: 5,
-    vibe: 1,
-    title: 'CYBERPUNK 2077',
-    dj: 'PERTURBATOR',
-    date: 'DEC 10',
-    time: '21:00 - 03:00',
-    location: 'Neon Club',
-    image: 'https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1974&auto=format&fit=crop',
-    status: 'Selling Fast',
-  },
-  // Vibe 2: Sunset House
-  {
-    id: 6,
+    id: 3001,
     vibe: 2,
-    title: 'COASTAL GROOVES',
-    dj: 'PEGGY GOU',
-    date: 'NOV 22',
-    time: '16:00 - 00:00',
-    location: 'Beach Club',
-    image: 'https://images.unsplash.com/photo-1516280440502-62b8110b64d0?q=80&w=2070&auto=format&fit=crop',
-    status: 'Available',
-  },
-  {
-    id: 7,
-    vibe: 2,
-    title: 'AFTERGLOW',
-    dj: 'TALE OF US',
-    date: 'DEC 28',
-    time: '18:00 - 02:00',
-    location: 'Coastal Stage',
-    image: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?q=80&w=2070&auto=format&fit=crop',
-    status: 'Sold Out',
+    title: 'COMING SOON',
+    dj: '',
+    date: '',
+    time: '',
+    location: '',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2080&auto=format&fit=crop',
+    status: 'Coming Soon',
+    comingSoon: true
   },
 ];
 
@@ -105,6 +53,23 @@ interface EventGridProps {
 export const EventGrid = ({ activeVibeIndex }: EventGridProps) => {
   const { t } = useLanguage();
   const filteredEvents = EVENTS.filter(event => event.vibe === activeVibeIndex);
+
+  // Helper: If event is SISIFUZ, show 'MIÉRCOLES' if today is not April 22, 2026
+  const getEventDate = (event) => {
+    if (event.title === 'SISIFUZ') {
+      const today = new Date();
+      // 2026-04-22 is the launch date
+      const launchDate = new Date('2026-04-22');
+      if (
+        today.getFullYear() > 2026 ||
+        (today.getFullYear() === 2026 && today.getMonth() > 3) ||
+        (today.getFullYear() === 2026 && today.getMonth() === 3 && today.getDate() > 22)
+      ) {
+        return 'MIÉRCOLES';
+      }
+    }
+    return event.date;
+  };
 
   const getStatusTranslation = (status: string) => {
     switch(status) {
@@ -149,32 +114,25 @@ export const EventGrid = ({ activeVibeIndex }: EventGridProps) => {
                 {/* Image Container */}
                 <div className="relative h-64 overflow-hidden">
                   <div className="absolute inset-0 bg-magenta/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
-                  {event.instagram ? (
-                    <a href={event.instagram} target="_blank" rel="noopener noreferrer">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out cursor-pointer"
-                        referrerPolicy="no-referrer"
-                      />
-                    </a>
-                  ) : (
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                      referrerPolicy="no-referrer"
-                    />
-                  )}
-                  {/* Status Badge */}
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className={`w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out${event.comingSoon ? ' blur-md' : ''}`}
+                    referrerPolicy="no-referrer"
+                  />
+                  {/* Status Badge or Coming Soon */}
                   <div className="absolute top-4 right-4 z-20">
-                    <span className={`px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-full ${
-                      event.status === 'Sold Out' ? 'bg-red-500/80 text-white' :
-                      event.status === 'Selling Fast' ? 'bg-orange-500/80 text-white animate-pulse' :
-                      'bg-green-500/80 text-white'
-                    }`}>
-                      {getStatusTranslation(event.status)}
-                    </span>
+                    {event.comingSoon ? (
+                      <span className="px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-full bg-gray-700/80 text-white animate-pulse">Coming Soon</span>
+                    ) : (
+                      <span className={`px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-full ${
+                        event.status === 'Sold Out' ? 'bg-red-500/80 text-white' :
+                        event.status === 'Selling Fast' ? 'bg-orange-500/80 text-white animate-pulse' :
+                        'bg-green-500/80 text-white'
+                      }`}>
+                        {getStatusTranslation(event.status)}
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -183,36 +141,56 @@ export const EventGrid = ({ activeVibeIndex }: EventGridProps) => {
                   {/* Glitch Overlay on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                  <div className="relative z-10">
-                    <h3 className="text-2xl font-display font-bold uppercase tracking-tight mb-1 text-magenta group-hover:text-white transition-colors text-glitch-hover">
-                      {event.title}
-                    </h3>
-                    <p className="text-3xl font-display font-black uppercase tracking-tighter mb-6 text-white text-glitch-hover">
-                      {event.dj}
-                    </p>
+                  <div className="relative z-10 flex flex-col items-center justify-center min-h-[120px]">
+                    {event.comingSoon ? (
+                      <>
+                        <h3 className="text-2xl font-display font-bold uppercase tracking-tight mb-1 text-magenta group-hover:text-white transition-colors text-glitch-hover">Coming Soon</h3>
+                        <p className="text-lg font-medium text-white/70">Próximamente nuevos eventos en esta categoría.</p>
+                      </>
+                    ) : (
+                      <>
+                        <h3 className="text-2xl font-display font-bold uppercase tracking-tight mb-1 text-magenta group-hover:text-white transition-colors text-glitch-hover">
+                          {event.dj}
+                        </h3>
+                        <p className="text-3xl font-display font-black uppercase tracking-tighter mb-6 text-white text-glitch-hover">
+                          {event.title}
+                        </p>
 
-                    <div className="space-y-3 text-sm text-white/70 font-medium tracking-wide">
-                      <div className="flex items-center space-x-3">
-                        <Calendar size={16} className="text-cyan" />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Clock size={16} className="text-cyan" />
-                        <span>{event.time}</span>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <MapPin size={16} className="text-cyan" />
-                        <span>{event.location}</span>
-                      </div>
-                    </div>
+                        <div className="space-y-3 text-sm text-white/70 font-medium tracking-wide">
+                          <div className="flex items-center space-x-3">
+                            <Calendar size={16} className="text-cyan" />
+                            <span>{getEventDate(event)}</span>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <Clock size={16} className="text-cyan" />
+                            <span>{event.time}</span>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <MapPin size={16} className="text-cyan" />
+                            <span>{event.location}</span>
+                          </div>
+                        </div>
 
-                    <button className={`w-full mt-8 py-3 font-bold uppercase tracking-widest text-sm transition-all duration-300 ${
-                      event.status === 'Sold Out' 
-                        ? 'bg-white/10 text-white/40 cursor-not-allowed'
-                        : 'bg-magenta/10 border border-magenta text-magenta hover:bg-magenta hover:text-obsidian box-glitch-hover'
-                    }`}>
-                      {event.status === 'Sold Out' ? t('events.btn.waitlist') : t('events.btn.tickets')}
-                    </button>
+                        {event.status === 'Sold Out' ? (
+                          <button className={`w-full mt-8 py-3 font-bold uppercase tracking-widest text-sm transition-all duration-300 bg-white/10 text-white/40 cursor-not-allowed`}>
+                            {t('events.btn.waitlist')}
+                          </button>
+                        ) : (
+                          <a
+                            href={event.instagram || '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full block mt-8"
+                          >
+                            <button
+                              className="w-full py-3 font-bold uppercase tracking-widest text-sm transition-all duration-300 bg-magenta/10 border border-magenta text-magenta hover:bg-magenta hover:text-obsidian box-glitch-hover"
+                            >
+                              {t('events.btn.tickets')}
+                            </button>
+                          </a>
+                        )}
+                      </>
+                    )}
                   </div>
                 </div>
               </motion.div>

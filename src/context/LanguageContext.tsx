@@ -85,7 +85,7 @@ const translations = {
     'events.status.sellingFast': 'Últimas Entradas',
     'events.status.available': 'Disponible',
     'events.btn.waitlist': 'Lista de Espera',
-    'events.btn.tickets': 'Comprar Entradas',
+    'events.btn.tickets': 'Adquiere Entradas',
     'talent.title': 'Nuestro Talento',
     'talent.subtitle': 'Los arquitectos de Vortexa.',
     'talent.previewTrack': 'Escuchar Pista',

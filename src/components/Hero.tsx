@@ -15,8 +15,8 @@ const HERO_EVENTS = [
     id: 1,
     image: SisifuzImg,
     title: 'SISIFUZ',
-    date: 'MIÉRCOLES DE SISIFUZ',
-    genre: 'Hartechno',
+    date: 'SISIFUZ',
+    genre: 'HARD TECHNO',
     isSisifuz: true,
     instagram: 'https://www.instagram.com/sisifuz/'
   },
@@ -108,10 +108,7 @@ export const Hero = () => {
               transition={{ duration: 0.5 }}
             >
               <p className="text-cyan font-bold uppercase tracking-widest text-sm md:text-lg mb-2 drop-shadow-md">
-                {HERO_EVENTS[currentIndex].date}
-                {HERO_EVENTS[currentIndex].genre && (
-                  <span className="ml-2 text-magenta font-bold">{HERO_EVENTS[currentIndex].genre}</span>
-                )}
+                {HERO_EVENTS[currentIndex].genre}
               </p>
               {HERO_EVENTS[currentIndex].isPulseWade ? (
                 <Link to="/talent" className="text-4xl md:text-7xl font-display font-black uppercase tracking-tighter text-magenta drop-shadow-lg hover:underline">
@@ -119,7 +116,7 @@ export const Hero = () => {
                 </Link>
               ) : (
                 <h2 className="text-4xl md:text-7xl font-display font-black uppercase tracking-tighter text-white drop-shadow-lg">
-                  {HERO_EVENTS[currentIndex].title}
+                  {HERO_EVENTS[currentIndex].date}
                 </h2>
               )}
             </motion.div>

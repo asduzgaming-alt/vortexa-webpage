@@ -86,83 +86,6 @@ const TALENT_LIST = [
       tiktok: 'https://www.tiktok.com/@pulsewade.dj?_r=1&_t=ZS-95HJN800xG8'
     }
   },
-  // 3-6. Placeholders (using previous DJ data as placeholders)
-  {
-    id: 3,
-    type: 'dj',
-    name: 'AMELIE LENS',
-    genre: 'Techno',
-    nationality: 'Belgian',
-    flag: '🇧🇪',
-    images: [
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop'
-    ],
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
-    socials: {
-      instagram: 'https://instagram.com/amelielens',
-      soundcloud: 'https://soundcloud.com/amelielens',
-      tiktok: 'https://tiktok.com/@amelielens'
-    }
-  },
-  {
-    id: 4,
-    type: 'dj',
-    name: 'KAVINSKY',
-    genre: 'Synthwave',
-    nationality: 'French',
-    flag: '🇫🇷',
-    images: [
-      'https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1550029402-226115b7c579?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=2070&auto=format&fit=crop'
-    ],
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
-    socials: {
-      instagram: 'https://instagram.com/kavinsky',
-      soundcloud: 'https://soundcloud.com/kavinsky',
-      tiktok: 'https://tiktok.com/@kavinsky'
-    }
-  },
-  {
-    id: 5,
-    type: 'dj',
-    name: 'I HATE MODELS',
-    genre: 'Industrial Techno',
-    nationality: 'French',
-    flag: '🇫🇷',
-    images: [
-      'https://images.unsplash.com/photo-1598387993441-a364f854c3e1?q=80&w=2076&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop'
-    ],
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
-    socials: {
-      instagram: 'https://instagram.com/ihatemodels',
-      soundcloud: 'https://soundcloud.com/ihatemodels',
-      tiktok: 'https://tiktok.com/@ihatemodels'
-    }
-  },
-  {
-    id: 6,
-    type: 'dj',
-    name: 'CHARLOTTE DE WITTE',
-    genre: 'Acid Techno',
-    nationality: 'Belgian',
-    flag: '🇧🇪',
-    images: [
-      'https://images.unsplash.com/photo-1520483601560-389dff434fdf?q=80&w=1974&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1459749411177-042180ce673c?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=2069&auto=format&fit=crop'
-    ],
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3',
-    socials: {
-      instagram: 'https://instagram.com/charlottedewittemusic',
-      soundcloud: 'https://soundcloud.com/charlottedewitte',
-      tiktok: 'https://tiktok.com/@charlottedewitte'
-    }
-  }
 ];
 
 const AudioVisualizer = ({ isPlaying }: { isPlaying: boolean }) => {
@@ -255,16 +178,6 @@ export const Talent = () => {
             }`}
           >
             Influencers
-          </button>
-          <button 
-            onClick={() => setActiveTab('event')}
-            className={`px-8 py-3 rounded-full uppercase tracking-widest font-bold text-sm transition-all duration-300 ${
-              activeTab === 'event' 
-                ? 'bg-green-500 text-white shadow-[0_0_20px_rgba(44,233,133,0.5)]' 
-                : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            Próximos Raves
           </button>
         </div>
 
