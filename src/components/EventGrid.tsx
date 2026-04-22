@@ -4,6 +4,19 @@ import { useLanguage } from '../context/LanguageContext';
 
 const EVENTS = [
   // Vibe 0: Techno
+import SisifuzImg from '../assets/images/Sisifuz Place Holder.png';
+  {
+    id: 1001,
+    vibe: 0,
+    title: 'SISIFUZ',
+    dj: 'HARTECHNO',
+    date: 'MIÉRCOLES',
+    time: '',
+    location: '',
+    image: SisifuzImg,
+    status: 'Available',
+    instagram: 'https://www.instagram.com/sisifuz/'
+  },
   {
     id: 1,
     vibe: 0,
@@ -136,12 +149,23 @@ export const EventGrid = ({ activeVibeIndex }: EventGridProps) => {
                 {/* Image Container */}
                 <div className="relative h-64 overflow-hidden">
                   <div className="absolute inset-0 bg-magenta/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500" />
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
-                    referrerPolicy="no-referrer"
-                  />
+                  {event.instagram ? (
+                    <a href={event.instagram} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out cursor-pointer"
+                        referrerPolicy="no-referrer"
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out"
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
                   {/* Status Badge */}
                   <div className="absolute top-4 right-4 z-20">
                     <span className={`px-3 py-1 text-xs font-bold uppercase tracking-widest rounded-full ${
