@@ -1,5 +1,8 @@
 import SisifuzImg from '../assets/images/Sisifuz Place Holder.png';
 import Daniela1 from '../assets/images/Daniela 1.png';
+import XimenaPortada from '../assets/images/Ximena Portada.png';
+import Ximena1 from '../assets/images/Ximena 1.png';
+import Ximena2 from '../assets/images/ximena 2.png';
 import { useState, useRef } from 'react';
 import PulseWade1 from '../assets/images/Pulse wade 1.png';
 import PulseWade2 from '../assets/images/Pulse wade 2.jpeg';
@@ -43,13 +46,27 @@ const TALENT_LIST = [
       instagram: 'https://www.instagram.com/sisifuz/'
     }
   },
-    // Influencer: Daniella Pinto
+    // Influencer: Ximena Nevado (first)
+    {
+      id: 101,
+      type: 'influencer',
+      name: 'XIMENA NEVADO',
+      genre: 'Lifestyle',
+      nationality: 'Peruana',
+      flag: '🇵🇪',
+      images: [Ximena1, Ximena2],
+      audioSrc: '',
+      socials: {
+        instagram: 'https://www.instagram.com/ximenevado/'
+      }
+    },
+    // Influencer: Daniella Pinto (second)
     {
       id: 100,
       type: 'influencer',
       name: 'DANIELLA PINTO',
       genre: 'Lifestyle',
-      nationality: 'Peruvian',
+      nationality: 'Peruana',
       flag: '🇵🇪',
       images: [Daniela1],
       audioSrc: '',
@@ -64,7 +81,7 @@ const TALENT_LIST = [
     type: 'dj',
     name: 'GONZALO MADARIAGA',
     genre: 'Techno',
-    nationality: 'Chilean',
+    nationality: 'Chileno',
     flag: '🇨🇱',
     images: [Gonzalo1, Gonzalo2],
     audioSrc: '',
@@ -76,7 +93,7 @@ const TALENT_LIST = [
     type: 'dj',
     name: 'PULSE WADE',
     genre: 'House',
-    nationality: 'Peruvian',
+    nationality: 'Peruano',
     flag: '🇵🇪',
     images: [PulseWade1, PulseWade2, PulseWade3],
     audioSrc: PulseWadeAudio,
@@ -200,8 +217,7 @@ export const Talent = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
               
               <div className="absolute inset-x-0 bottom-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="text-lg">{artist.flag}</span>
+                <div className="mb-2">
                   <p className="text-cyan font-bold uppercase tracking-widest text-xs">{artist.nationality}</p>
                 </div>
                 <p className="text-white/60 font-bold uppercase tracking-widest text-[10px] mb-1">{artist.genre}</p>
@@ -279,8 +295,7 @@ export const Talent = () => {
                   <X size={24} />
                 </button>
 
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="text-2xl">{selectedTalent.flag}</span>
+                <div className="mb-2">
                   <p className="text-cyan font-bold uppercase tracking-widest text-sm">{selectedTalent.nationality}</p>
                 </div>
                 <p className="text-white/40 font-bold uppercase tracking-widest text-xs mb-1">{selectedTalent.genre}</p>

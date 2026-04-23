@@ -1,4 +1,5 @@
 import Daniela1 from '../assets/images/Daniela 1.png';
+import XimenaPortada from '../assets/images/Ximena Portada.png';
 import { useState, useEffect } from 'react';
 import PulseWadeHorizontal from '../assets/images/Pulse wade  HORIZONTAL.png';
 import VortexaLogo from '../assets/images/Vortexa ISOTIPO.png';
@@ -31,15 +32,16 @@ const HERO_EVENTS = [
     id: 3,
     image: Gonzalo1,
     title: 'GONZALO MADARIAGA',
-    date: 'TALENTO',
+    date: 'GONZALO MADARIAGA',
     isGonzalo: true
   },
   {
     id: 4,
-    image: Daniela1,
-    title: 'DANIELLA PINTO',
-    date: 'TALENTO',
-    isDaniella: true
+    image: XimenaPortada,
+    title: 'XIMENA NEVADO',
+    date: 'XIMENA NEVADO',
+    isXimena: true,
+    instagram: 'https://www.instagram.com/ximenevado/'
   }
 ];
 
