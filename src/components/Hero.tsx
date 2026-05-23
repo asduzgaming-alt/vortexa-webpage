@@ -10,6 +10,9 @@ import { useLanguage } from '../context/LanguageContext';
 
 import Gonzalo1 from '../assets/images/Gonzalo1.jpeg';
 import SisifuzImg from '../assets/images/Sisifuz Place Holder.png';
+import Nacho1 from '../assets/images/Nacho Garcia/2023-01-15 Sesion Retrato Nacho Garcia-001.JPEG';
+import Nacho2 from '../assets/images/Nacho Garcia/DSC_0286.jpeg';
+import Nacho3 from '../assets/images/Nacho Garcia/DSC_0298.jpeg';
 
 const HERO_EVENTS = [
   {
@@ -42,6 +45,19 @@ const HERO_EVENTS = [
     date: 'XIMENA NEVADO',
     isXimena: true,
     instagram: 'https://www.instagram.com/ximenevado/'
+  },
+  {
+    id: 5,
+    image: Nacho3,
+    title: 'NVCHO',
+    date: 'NVCHO',
+    genre: 'HOUSE / DJ - PRODUCTOR',
+    description: `Nvcho es un DJ y productor de música electrónica argentino desde sus inicios en clubes y fiestas locales de su provincia hasta compartir cabina con DJs referentes de la escena nacional. Nvcho ha dejado marcado su talento en la escena electrónica de su ciudad y alrededores denotando innovación y pasión por la música a la hora de subirse a la cabina.
+
+Nacido en Catamarca, Argentina, Nvcho descubrió su pasión por la música electrónica desde temprana edad influenciado por sonidos funk y house de los 2000 como ser Daft Punk, Jamiroquai, Groove Armada, entre otros.
+
+Sus presentaciones están caracterizadas por la frescura del house y sus derivados llegando a crear así una atmósfera cargada de mucho groove y fiesta en cada una de sus fechas.`,
+    images: [Nacho1, Nacho2, Nacho3]
   }
 ];
 
@@ -75,14 +91,14 @@ export const Hero = () => {
                 <img
                   src={HERO_EVENTS[currentIndex].image}
                   alt={HERO_EVENTS[currentIndex].title}
-                  className="w-full h-full object-cover cursor-pointer"
+                  className="w-full h-full object-cover object-center cursor-pointer"
                 />
               </a>
             ) : (
               <img
                 src={HERO_EVENTS[currentIndex].image}
                 alt={HERO_EVENTS[currentIndex].title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
             )}
           </motion.div>

@@ -10,6 +10,9 @@ import PulseWade3 from '../assets/images/Pulse wade 3.png';
 import PulseWadeAudio from '../assets/mp3/pulsewade-fragment.mp3';
 import Gonzalo1 from '../assets/images/Gonzalo1.jpeg';
 import Gonzalo2 from '../assets/images/Gonzalo2.jpg';
+import Nacho1 from '../assets/images/Nacho Garcia/2023-01-15 Sesion Retrato Nacho Garcia-001.JPEG';
+import Nacho2 from '../assets/images/Nacho Garcia/DSC_0286.jpeg';
+import Nacho3 from '../assets/images/Nacho Garcia/DSC_0298.jpeg';
 import { motion, AnimatePresence } from 'motion/react';
 import { VortexBackground } from '../components/VortexBackground';
 import { Instagram, Music, X, Play, Pause, MessageCircle } from 'lucide-react';
@@ -102,6 +105,18 @@ const TALENT_LIST = [
       soundcloud: 'https://on.soundcloud.com/3KeTl6JhFE4GELtrdF',
       tiktok: 'https://www.tiktok.com/@pulsewade.dj?_r=1&_t=ZS-95HJN800xG8'
     }
+  },
+  // 3. Nvcho (Nacho Garcia)
+  {
+    id: 3,
+    type: 'dj',
+    name: 'NVCHO',
+    genre: 'House',
+    nationality: 'Argentina',
+    flag: '🇦🇷',
+    images: [Nacho1, Nacho2, Nacho3],
+    audioSrc: '',
+    socials: { instagram: '', soundcloud: '', tiktok: '' }
   },
 ];
 
@@ -207,13 +222,13 @@ export const Talent = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl glass box-glitch-hover aspect-[3/4] cursor-pointer"
+              className="group relative overflow-hidden rounded-xl glass box-glitch-hover aspect-[3/4] sm:aspect-[4/5] md:aspect-[3/4] cursor-pointer"
             >
-              <img 
-                src={artist.images[0]} 
-                alt={artist.name} 
-                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
-              />
+                <img 
+                  src={artist.images[0]} 
+                  alt={artist.name} 
+                  className="absolute inset-0 w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
               
               <div className="absolute inset-x-0 bottom-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -269,7 +284,7 @@ export const Talent = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute inset-0 w-full h-full object-cover" 
+                    className="absolute inset-0 w-full h-full object-contain md:object-cover object-center bg-black" 
                   />
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian to-transparent md:hidden" />
